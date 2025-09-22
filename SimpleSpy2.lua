@@ -7,7 +7,7 @@ local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 local Highlight =
 	loadstring(
-		game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpyZxL/refs/heads/main/Highlight.lua"))()
+		game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/Highlight.lua"))()
 
 ---- GENERATED (kinda sorta mostly) BY GUI to LUA ----
 
