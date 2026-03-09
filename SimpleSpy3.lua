@@ -731,6 +731,7 @@ function isInDragRange(p)
     return relativeP.X <= topbarAS.X - CloseButton.AbsoluteSize.X * 3 and relativeP.X >= 0 and relativeP.Y <= topbarAS.Y and relativeP.Y >= 0 or false
 end
 
+--[[
 --- Called when mouse enters SimpleSpy
 local customCursor = Create("ImageLabel",{Parent = SimpleSpy3,Visible = false,Size = UDim2.fromOffset(200, 200),ZIndex = 1e9,BackgroundTransparency = 1,Image = "",Parent = SimpleSpy3})
 function mouseEntered()
@@ -760,6 +761,7 @@ function mouseEntered()
         end
     end)
 end
+]]
 
 --- Called when mouse moves
 function mouseMoved()

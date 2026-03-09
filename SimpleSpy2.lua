@@ -923,6 +923,7 @@ function isInDragRange(p)
 	return false
 end
 
+--[[
 --- Called when mouse enters SimpleSpy
 function mouseEntered()
 	local existingCursor = SimpleSpy2:FindFirstChild("Cursor")
@@ -962,6 +963,7 @@ function mouseEntered()
 		end
 	end)
 end
+]]
 
 --- Called when mouse moves
 function mouseMoved()
