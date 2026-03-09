@@ -1,5 +1,5 @@
 better use v3
-## Loadstring v1 ( Moblie/Pc )
+## Loadstring modify ( Moblie/Pc )
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/SimpleSpy.lua"))()
 ```
