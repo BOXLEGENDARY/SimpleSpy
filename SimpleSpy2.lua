@@ -48,14 +48,14 @@ SimpleSpy2.ResetOnSpawn = false
 
 Background.Name = "Background"
 Background.Parent = SimpleSpy2
-Background.BackgroundColor3 = Color3.new(1, 1, 1)
-Background.BackgroundTransparency = 1
+Background.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Background.BackgroundTransparency = 0.1
 Background.Position = UDim2.new(0, 500, 0, 200)
 Background.Size = UDim2.new(0, 450, 0, 268)
 
 LeftPanel.Name = "LeftPanel"
 LeftPanel.Parent = Background
-LeftPanel.BackgroundColor3 = Color3.fromRGB(53, 52, 55)
+LeftPanel.BackgroundColor3 = Color3.fromRGB(37, 37, 38)
 LeftPanel.BorderSizePixel = 0
 LeftPanel.Position = UDim2.new(0, 0, 0, 19)
 LeftPanel.Size = UDim2.new(0, 131, 0, 249)
@@ -118,14 +118,14 @@ Button.TextSize = 14
 
 RightPanel.Name = "RightPanel"
 RightPanel.Parent = Background
-RightPanel.BackgroundColor3 = Color3.fromRGB(37, 36, 38)
+RightPanel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 RightPanel.BorderSizePixel = 0
 RightPanel.Position = UDim2.new(0, 131, 0, 19)
 RightPanel.Size = UDim2.new(0, 319, 0, 249)
 
 CodeBox.Name = "CodeBox"
 CodeBox.Parent = RightPanel
-CodeBox.BackgroundColor3 = Color3.new(0.0823529, 0.0745098, 0.0784314)
+CodeBox.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 CodeBox.BorderSizePixel = 0
 CodeBox.Size = UDim2.new(0, 319, 0, 119)
 
@@ -188,7 +188,7 @@ Button_2.TextSize = 14
 
 TopBar.Name = "TopBar"
 TopBar.Parent = Background
-TopBar.BackgroundColor3 = Color3.fromRGB(37, 35, 38)
+TopBar.BackgroundColor3 = Color3.fromRGB(45, 45, 48)
 TopBar.BorderSizePixel = 0
 TopBar.Size = UDim2.new(0, 450, 0, 19)
 
