@@ -236,15 +236,15 @@ local Storage = Create("Folder", {})
 
 local Background = Create("Frame", {
 	Parent = SimpleSpy3,
-	BackgroundColor3 = Color3.new(1, 1, 1),
-	BackgroundTransparency = 1,
+	BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+	BackgroundTransparency = 0.1,
 	Position = UDim2.new(0, 500, 0, 200),
 	Size = UDim2.new(0, 450, 0, 268)
 })
 
 local LeftPanel = Create("Frame", {
 	Parent = Background,
-	BackgroundColor3 = Color3.fromRGB(53, 52, 55),
+	BackgroundColor3 = Color3.fromRGB(37, 37, 38),
 	BorderSizePixel = 0,
 	Position = UDim2.new(0, 0, 0, 19),
 	Size = UDim2.new(0, 131, 0, 249)
@@ -270,7 +270,7 @@ local UIListLayout = Create("UIListLayout", {
 
 local RightPanel = Create("Frame", {
 	Parent = Background,
-	BackgroundColor3 = Color3.fromRGB(37, 36, 38),
+	BackgroundColor3 = Color3.fromRGB(30, 30, 30),
 	BorderSizePixel = 0,
 	Position = UDim2.new(0, 131, 0, 19),
 	Size = UDim2.new(0, 319, 0, 249)
@@ -278,7 +278,7 @@ local RightPanel = Create("Frame", {
 
 local CodeBox = Create("Frame", {
 	Parent = RightPanel,
-	BackgroundColor3 = Color3.fromRGB(21, 19, 20),
+	BackgroundColor3 = Color3.fromRGB(18, 18, 18),
 	BorderSizePixel = 0,
 	Size = UDim2.new(0, 319, 0, 119)
 })
@@ -304,7 +304,7 @@ local UIGridLayout = Create("UIGridLayout", {
 
 local TopBar = Create("Frame", {
 	Parent = Background,
-	BackgroundColor3 = Color3.fromRGB(37, 35, 38),
+	BackgroundColor3 = Color3.fromRGB(45, 45, 48),
 	BorderSizePixel = 0,
 	Size = UDim2.new(0, 450, 0, 19)
 })
@@ -449,8 +449,8 @@ end)
 
 -------------------------------------------------------------------------------
 
-local selectedColor = Color3.new(0.321569, 0.333333, 1)
-local deselectedColor = Color3.new(0.8, 0.8, 0.8)
+local selectedColor = Color3.fromRGB(86, 156, 214)
+local deselectedColor = Color3.fromRGB(200, 200, 200)
 --- So things are descending
 local layoutOrderNum = 999999999
 --- Whether or not the gui is closing
