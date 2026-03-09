@@ -5,9 +5,8 @@ end
 
 local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
-local Highlight =
-	loadstring(
-		game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/Highlight.lua"))()
+local Highlight = loadstring(game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/Highlight.lua"))()
+local UIS = game:GetService("UserInputService")
 
 ---- GENERATED (kinda sorta mostly) BY GUI to LUA ----
 
@@ -281,6 +280,41 @@ TextLabel.TextSize = 14
 TextLabel.TextWrapped = true
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+-- Drag GUI
+local dragging = false
+local dragInput, mousePos, framePos
+
+TopBar.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        mousePos = input.Position
+        framePos = Background.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+TopBar.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - mousePos
+        Background.Position = UDim2.new(
+            framePos.X.Scale,
+            framePos.X.Offset + delta.X,
+            framePos.Y.Scale,
+            framePos.Y.Offset + delta.Y
+        )
+    end
+end)
 
 -------------------------------------------------------------------------------
 -- init
