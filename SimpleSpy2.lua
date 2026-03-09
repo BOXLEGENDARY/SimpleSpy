@@ -1,3 +1,13 @@
+--[[
+    SimpleSpy v2.2 SOURCE
+
+    SimpleSpy is a lightweight penetration testing tool that logs remote calls.
+
+    Credits:
+        exx - basically everything
+        Frosty - GUI to Lua
+]]
+
 -- shuts down the previous instance of SimpleSpy
 if _G.SimpleSpyExecuted and type(_G.SimpleSpyShutdown) == "function" then
 	print(pcall(_G.SimpleSpyShutdown))
@@ -5,8 +15,10 @@ end
 
 local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
-local Highlight = loadstring(game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/Highlight.lua"))()
-local UIS = game:GetService("UserInputService")
+local Highlight =
+	loadstring(
+		game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/Highlight.lua")
+	)()
 
 ---- GENERATED (kinda sorta mostly) BY GUI to LUA ----
 
@@ -47,14 +59,14 @@ SimpleSpy2.ResetOnSpawn = false
 
 Background.Name = "Background"
 Background.Parent = SimpleSpy2
-Background.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Background.BackgroundTransparency = 0.1
+Background.BackgroundColor3 = Color3.new(1, 1, 1)
+Background.BackgroundTransparency = 1
 Background.Position = UDim2.new(0, 500, 0, 200)
 Background.Size = UDim2.new(0, 450, 0, 268)
 
 LeftPanel.Name = "LeftPanel"
 LeftPanel.Parent = Background
-LeftPanel.BackgroundColor3 = Color3.fromRGB(37, 37, 38)
+LeftPanel.BackgroundColor3 = Color3.fromRGB(53, 52, 55)
 LeftPanel.BorderSizePixel = 0
 LeftPanel.Position = UDim2.new(0, 0, 0, 19)
 LeftPanel.Size = UDim2.new(0, 131, 0, 249)
@@ -117,14 +129,14 @@ Button.TextSize = 14
 
 RightPanel.Name = "RightPanel"
 RightPanel.Parent = Background
-RightPanel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+RightPanel.BackgroundColor3 = Color3.fromRGB(37, 36, 38)
 RightPanel.BorderSizePixel = 0
 RightPanel.Position = UDim2.new(0, 131, 0, 19)
 RightPanel.Size = UDim2.new(0, 319, 0, 249)
 
 CodeBox.Name = "CodeBox"
 CodeBox.Parent = RightPanel
-CodeBox.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+CodeBox.BackgroundColor3 = Color3.new(0.0823529, 0.0745098, 0.0784314)
 CodeBox.BorderSizePixel = 0
 CodeBox.Size = UDim2.new(0, 319, 0, 119)
 
@@ -187,7 +199,7 @@ Button_2.TextSize = 14
 
 TopBar.Name = "TopBar"
 TopBar.Parent = Background
-TopBar.BackgroundColor3 = Color3.fromRGB(45, 45, 48)
+TopBar.BackgroundColor3 = Color3.fromRGB(37, 35, 38)
 TopBar.BorderSizePixel = 0
 TopBar.Size = UDim2.new(0, 450, 0, 19)
 
@@ -281,39 +293,41 @@ TextLabel.TextWrapped = true
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel.TextYAlignment = Enum.TextYAlignment.Top
 
+local UIS = game:GetService("UserInputService")
+
 -- Drag GUI
 local dragging = false
 local dragInput, mousePos, framePos
 
 TopBar.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        mousePos = input.Position
-        framePos = Background.Position
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
-            end
-        end)
-    end
+	if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = true
+		mousePos = input.Position
+		framePos = Background.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
 end)
 
 TopBar.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement then
-        dragInput = input
-    end
+	if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement then
+		dragInput = input
+	end
 end)
 
 UIS.InputChanged:Connect(function(input)
-    if input == dragInput and dragging then
-        local delta = input.Position - mousePos
-        Background.Position = UDim2.new(
-            framePos.X.Scale,
-            framePos.X.Offset + delta.X,
-            framePos.Y.Scale,
-            framePos.Y.Offset + delta.Y
-        )
-    end
+	if input == dragInput and dragging then
+		local delta = input.Position - mousePos
+		Background.Position = UDim2.new(
+			framePos.X.Scale,
+			framePos.X.Offset + delta.X,
+			framePos.Y.Scale,
+			framePos.Y.Offset + delta.Y
+		)
+	end
 end)
 
 -------------------------------------------------------------------------------
