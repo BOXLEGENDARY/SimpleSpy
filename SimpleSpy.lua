@@ -237,7 +237,7 @@ local Storage = Create("Folder", {})
 local Background = Create("Frame", {
 	Parent = SimpleSpy3,
 	BackgroundColor3 = Color3.fromRGB(25, 25, 25),
-	BackgroundTransparency = 0.1,
+	BackgroundTransparency = 1,
 	Position = UDim2.new(0, 500, 0, 200),
 	Size = UDim2.new(0, 450, 0, 268)
 })
