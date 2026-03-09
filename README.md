@@ -5,5 +5,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSp
 ```
 ## Loadstring v3 ( PC )
 ```lua
-https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/SimpleSpy3.lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BOXLEGENDARY/SimpleSpy/refs/heads/main/SimpleSpy3.lua"))()
 ```
