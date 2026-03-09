@@ -454,14 +454,19 @@ end
 local constructor = {}
 function constructor.new(...)
     local self = setmetatable({}, Highlight)
+    local args = {...}     
     if self.init then
         -- keep compatibility with earlier pattern new:init(...)
-    end
+    end  
     if select("#", ...) > 0 then
         -- if passed a frame on creation, call init
-        local ok, err = pcall(function() self:init(...) end)
+        local ok, err = pcall(function() 
+            self:init(table.unpack(args)) 
+        end)
+        
         if not ok then error(err) end
     end
+    
     return self
 end
 
