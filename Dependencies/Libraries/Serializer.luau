@@ -1,4 +1,5 @@
 --[[
+    Original by: https://github.com/78n
 	Scripted by: https://github.com/BOXLEGENDARY
 ]]
 --!optimize 2
@@ -772,10 +773,6 @@ local function Serializevargs(... : any)
 	return unpack(tbl, 1, tbl.n)
 end
 
--- ==========================================
--- Main Class Methods & Compatibilty Layer
--- ==========================================
-
 function Class.Convert<Type>(DataStructure : Type, format : boolean?)
 	return Serialize(DataStructure, format, "")
 end
@@ -803,7 +800,6 @@ Class.Internals = table.freeze({
 	Serialize = Serialize
 })
 
--- Alias Methods for Script 2 Compatibility
 Class.Advanced.Serialize = Class.Convert
 Class.Advanced.SerializeKnown = Class.ConvertKnown
 Class.Serialize = Class.Convert
