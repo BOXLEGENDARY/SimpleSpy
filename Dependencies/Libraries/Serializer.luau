@@ -1,6 +1,6 @@
 --[[
     Original by: https://github.com/78n
-	Scripted by: https://github.com/BOXLEGENDARY
+	Edit by: https://github.com/BOXLEGENDARY
 ]]
 --!optimize 2
 --!native
